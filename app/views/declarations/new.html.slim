@@ -1,2 +1,17 @@
-h1 Declarations#new
-p Find me in app/views/declarations/new.html.slim
+h1 断酒宣言アプリへようこそ！
+p
+  | お酒を飲みたいけど我慢したいあなたへ
+  br
+  | お酒を我慢している人にマウントをとりたいあなたへ
+
+= form_with model: @declaration, local: true do |f|
+  .form-group
+    = f.label :nickname
+    = f.text_field :nickname, class: 'form-control'
+  .form-group
+    = f.label :declaration
+    = f.select :declaration, ['飲酒！', '断酒！'], { include_blank: '宣言' }, class: 'form-control'
+  .form-group
+    = f.label :comment
+    = f.text_field :comment, class: 'form-control'
+  = f.submit nil, class: 'btn btn-warning'

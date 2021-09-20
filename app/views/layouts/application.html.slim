@@ -2,11 +2,15 @@ doctype html
 html
   head
     title
-      | StopAlcoholApp
+      | 断酒宣言！
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    .navbar.navbar-expand-md.navbar-light.bg-warning
+      .navbar-brand
+        = link_to "断酒宣言", root_path
+    .container
+      = yield
