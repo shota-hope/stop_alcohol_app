@@ -1,2 +1,17 @@
-h1 Declarations#index
-p Find me in app/views/declarations/index.html.slim
+h1 宣言一覧
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th= 'ニックネーム'
+      th= '宣言'
+      th= 'ひとことコメント'
+      th= '宣言日時'
+  tbody
+    - @declarations.each do |declaration|
+      tr
+        td= declaration.nickname
+        td= declaration.declaration
+        td= declaration.comment
+        td= declaration.created_at
